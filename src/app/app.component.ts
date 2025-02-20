@@ -1,25 +1,10 @@
-import { Component, inject } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { WeatherforecastService } from './weatherforecast.service';
-import { ButtonModule } from 'primeng/button';
-import { AccordionModule } from 'primeng/accordion';
-import { TabsModule } from 'primeng/tabs';
-import { InputTextModule } from 'primeng/inputtext';
+import { Component } from '@angular/core';
+import { LoginComponent } from './login/login.component';
 
 @Component({
-  standalone: true,
-  imports: [ButtonModule, AccordionModule,TabsModule,InputTextModule], // Agrega ambos módulos aquí
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  standalone: true,
+  template: `<app-login></app-login>`, // Muestra directamente el login
+  imports: [LoginComponent]
 })
-export class AppComponent {
-  weatherforecastService = inject(WeatherforecastService);
-  climas: any[] = [];
-
-  constructor() {
-    this.weatherforecastService.obtenerServicios().subscribe(datos => {
-      this.climas = datos;
-    });
-  }
-}
+export class AppComponent {}
