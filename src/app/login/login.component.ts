@@ -1,24 +1,26 @@
-import { Component } from '@angular/core';
-import { NavigationService } from '../navigation-service.service';
-// Asegúrate de importar el servicio de navegación
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CheckboxModule } from 'primeng/checkbox'; 
 
 @Component({
   selector: 'app-login',
   standalone: true,
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
+  imports: [FormsModule, ReactiveFormsModule, CheckboxModule] 
 })
-export class LoginComponent {
-  constructor(private navigationService: NavigationService) {}
+export class LoginComponent implements OnInit {
+  formGroup!: FormGroup;
+
+  constructor() {}
+
+  ngOnInit() {
+    this.formGroup = new FormGroup({
+      city: new FormControl(false) 
+    });
+  }
 
   login() {
-    // Aquí va la lógica de autenticación (simulada)
-    const autenticado = true;
-
-    if (autenticado) {
-      this.navigationService.navigateToPrincipal(); // Redirige al principal
-    } else {
-      console.log('Credenciales incorrectas');
-    }
+    console.log('Checkbox seleccionado:', this.formGroup.value.city);
   }
 }

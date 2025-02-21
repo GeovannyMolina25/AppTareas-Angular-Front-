@@ -7,8 +7,22 @@
   <div><h3>Login</h3></div>
   <div>
     <div>
-      <span><i class="pi pi-check"></i></span>
-      
+      <span><i class="pi pi-user"></i></span>
+      <input type="text" pInputText />
+    </div>
+  </div>
+  <div>
+    <div>
+      <span><i class="pi pi-key"></i></span>
+      <input type="text" pInputText>
+    </div>
+  </div>
+  <div>
+    <div>
+      <form class="flex items-center gap-1" [formGroup]="formGroup">
+        <p-checkbox formControlName="city" value="New York" inputId="ny" />
+        <label for="ny" class="ml-2">New York</label>
+    </form>
     </div>
   </div>
 </div>
