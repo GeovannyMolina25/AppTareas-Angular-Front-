@@ -10,7 +10,6 @@ import { FormsModule } from '@angular/forms'
   styleUrl:'./app.component.css'
 })
 export class AppComponent {
-  condition: boolean = true;
-  
+  movies: string[] = ['Charlie y la fabrica de chocolates','El lobo de wold stree','Up','El ayuwoqui','Animal - cortrack','El señor de los anillos']
 
 }

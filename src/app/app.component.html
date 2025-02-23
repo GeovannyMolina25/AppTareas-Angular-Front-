@@ -1,5 +1,4 @@
 <h1>Bloque &#64;If - renderizado dinamico </h1>
-<h2>La condicion se cumple</h2>
-
-
-
+@for(movie of movies; track movie){
+    <p>{{$index}}, {{movie}}</p>
+}
