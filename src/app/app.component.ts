@@ -1,23 +1,25 @@
 import { Component, EventEmitter, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';  // Solo importamos RouterModule
-import { HeaderComponent } from './components/header/header.component';
 import { FormsModule } from '@angular/forms'
-import { ChildComponent } from "./components/child/child.component";
+import Product from './models/Product';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterModule, FormsModule, ChildComponent], 
+  imports: [RouterModule, FormsModule], 
   templateUrl:'./app.component.html',
   styleUrl:'./app.component.css'
 })
 export class AppComponent {
   name: string = "";
   namePadre:string ="";
-  envioPadre(){
-    this.namePadre = this.name;
-  }
-  setName(e:any){
-    this.name = e
+  product:Product;
+
+  constructor(){
+    this.product= {
+      name: "Laptop",
+      price: 12,
+      isForSale:true
+    }
   }
   
 }

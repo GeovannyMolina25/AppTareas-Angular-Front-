@@ -11,9 +11,12 @@ export class ChildComponent {
   @Output()
   login: EventEmitter<any> = new EventEmitter<any>
   userName: string ;
-
+  MyNumber: number;
+  
   constructor(){
+
     this.userName = 'Nelson Molina'
+    this.MyNumber = 10;
   }
   
 }
