@@ -1,25 +1,15 @@
 import { Component, EventEmitter, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';  // Solo importamos RouterModule
 import { FormsModule } from '@angular/forms'
-import Product from './models/Product';
+import { NgClass } from '@angular/common';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterModule, FormsModule], 
+  imports: [RouterModule, NgClass], 
   templateUrl:'./app.component.html',
   styleUrl:'./app.component.css'
 })
 export class AppComponent {
-  name: string = "";
-  namePadre:string ="";
-  product:Product;
+  isDark: boolean = true;
 
-  constructor(){
-    this.product= {
-      name: "Laptop",
-      price: 12,
-      isForSale:true
-    }
-  }
-  
 }
