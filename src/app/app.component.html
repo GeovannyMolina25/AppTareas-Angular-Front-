@@ -1,2 +1,18 @@
 <h1>ngClass | Clases dinamicas</h1>
 
+<form [formGroup]="movieForm" (submit)="handSubmit()">
+    
+    <fieldset >
+        <label for="movie-name">Movie name:</label>
+        <input type="text" id="movie-name" formControlName="name">
+    </fieldset>
+    <fieldset >
+        <label for="movie-duration">Movie name:</label>
+        <input type="text" id="movie-duration" formControlName="duration">
+    </fieldset>
+    <fieldset >
+        <label for="movie-director">Movie name:</label>
+        <input type="text" id="movie-director" formControlName="director">
+    </fieldset>
+    <button>create Movie</button>
+</form>

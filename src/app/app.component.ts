@@ -26,5 +26,8 @@ export class AppComponent {
       duration : this.duration
     });
   }
+  handSubmit(){
+    console.log(this.movieForm.value);
+  }
 
 }
