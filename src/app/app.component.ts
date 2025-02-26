@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';  // Solo importamos RouterModule
-import { Form, FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { Form, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms'
 import { NgClass } from '@angular/common';
 @Component({
   selector: 'app-root',
@@ -16,8 +16,8 @@ export class AppComponent {
   director: FormControl;
 
   constructor(){
-    this.name = new FormControl('');
-    this.duration = new FormControl('');
+    this.name = new FormControl('',Validators.required);
+    this.duration = new FormControl('',[Validators.required,Validators.max(20)]);
     this.director = new FormControl('');
 
     this.movieForm = new FormGroup({
