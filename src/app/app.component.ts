@@ -10,24 +10,5 @@ import { NgClass } from '@angular/common';
   styleUrl:'./app.component.css'
 })
 export class AppComponent {
-  movieForm: FormGroup;
-  name: FormControl;
-  duration: FormControl;
-  director: FormControl;
-
-  constructor(){
-    this.name = new FormControl('',Validators.required);
-    this.duration = new FormControl('',[Validators.required,Validators.max(20)]);
-    this.director = new FormControl('');
-
-    this.movieForm = new FormGroup({
-      name : this.name,
-      director: this.director,
-      duration : this.duration
-    });
-  }
-  handSubmit(){
-    console.log(this.movieForm.value);
-  }
-
+  
 }
