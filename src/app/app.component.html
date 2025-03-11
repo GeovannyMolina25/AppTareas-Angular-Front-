@@ -1,19 +1,1 @@
-<h1>Reactive Form</h1>
-<form [formGroup]="movieForm" (submit)="handleSubmit()">
-    <fieldset>
-        <label for="movie-name">Movie name:</label>
-        <input type="text" id="movie-name" formControlName="name">
-    </fieldset>
-    <fieldset>
-        <label for="movie-duration">Movie duration:</label>
-        <input type="text" id="movie-duration" formControlName="duration">
-    </fieldset>
-    <fieldset>
-        <label for="movie-director">Movie movie director:</label>
-        <input type="text" id="movie-director" formControlName="director">
-    </fieldset>
-    <button>create movie</button>
-</form>
-
-
 <router-outlet></router-outlet>

@@ -1,0 +1,26 @@
+<h1>Reactive Form</h1>
+<form [formGroup]="movieForm" (submit)="handleSubmit()">
+    <fieldset>
+        <label for="movie-name">Movie name:</label>
+        <input type="text" id="movie-name" formControlName="name">
+        @if(name.invalid && name.touched){
+            <p class="form-error"> El nombre es requerido</p>
+        }
+    </fieldset>
+    <fieldset>
+        <label for="movie-duration">Movie duration:</label>
+        <input type="text" id="movie-duration" formControlName="duration">
+        @if(duration.hasError("required") && duration.touched){
+            <p class="form-error">duration is require</p>
+        }@else if (duration.hasError("max") && duration.touched) {
+            <p class="form-error">Movie cannot be longet that 300 minutes</p>
+        }
+    </fieldset>
+    <fieldset>
+        <label for="movie-director">Movie movie director:</label>
+        <input type="text" id="movie-director" formControlName="director">
+    </fieldset>
+    <button [disabled]="movieForm.invalid">create movie</button>
+</form>
+
+
