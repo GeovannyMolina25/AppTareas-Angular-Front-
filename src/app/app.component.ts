@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';  // Solo importamos RouterModule
 import { ReactiveFormsModule } from '@angular/forms'
 
@@ -9,6 +9,12 @@ import { ReactiveFormsModule } from '@angular/forms'
   templateUrl:'./app.component.html',
   styleUrl:'./app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+  constructor(){
+    console.log('Dentro de contructor');
+  }
+  ngOnInit():void{
+    console.log("Dentro del OnInit")
+  }
   
 }

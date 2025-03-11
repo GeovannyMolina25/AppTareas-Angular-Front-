@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
 import { ActivatedRoute } from '@angular/router';
 import { MovieService } from '../../services/movie.service';
@@ -10,12 +10,17 @@ import Movie from '../../models/Movie';
   templateUrl: './movie-details.component.html',
   styleUrl: './movie-details.component.scss'
 })
-export class MovieDetailsComponent {
-  selectedMovie?: Movie | undefined;
+export class MovieDetailsComponent implements OnInit{
+  selectedMovie?: Movie;
 
-  constructor(private route:ActivatedRoute, private movieServise:MovieService){
-    const movieName = route.snapshot.params['movieName'];
+  constructor(
+    public movieServise:MovieService,
+    private route:ActivatedRoute
+  ){}
+  
+  ngOnInit(): void {
+    const movieName = this.route.snapshot.params['movieName'];
     console.log(movieName);
-     this.selectedMovie =  movieServise.getMovie(movieName);
+     this.selectedMovie =  this.movieServise.getMovie(movieName);
   }
 }
