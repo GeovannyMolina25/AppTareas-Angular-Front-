@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { MovieFormComponent } from '../../components/movie-form/movie-form.component';
 import { HeaderComponent } from '../../components/header/header.component';
+import { MovieFormComponent } from '../../components/movie-form/movie-form.component';
 
 @Component({
   selector: 'app-form-page',
-  imports: [ HeaderComponent],
+  imports: [ HeaderComponent, MovieFormComponent],
   templateUrl: './form-page.component.html',
   styleUrl: './form-page.component.scss'
 })
