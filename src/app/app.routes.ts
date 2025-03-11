@@ -8,6 +8,6 @@ import { MovieDetailsComponent } from './pages/movie-details/movie-details.compo
 export const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'movies',component:MovieListComponent },
-  {path: 'movies/:movieName',component:MovieDetailsComponent},
   {path: 'create', component:FormPageComponent},
+  {path: 'movies/:movieName',component:MovieDetailsComponent},
 ];

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import Product from '../models/Product';
+import Movie from '../models/Movie';
 
 @Injectable({
   providedIn: 'root'
@@ -16,5 +17,6 @@ export class ProductService {
   setProdutName(name: string):void{
     this.product.name = name;
   }
+
   }
 

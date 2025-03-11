@@ -25,4 +25,7 @@ export class MovieService {
     this.movies.push(movie)
 
   }
+  getMovie(name:String): Movie | undefined{
+    return this.movies.find((movie) => movie.name === name)
+  }
 }
