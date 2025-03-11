@@ -12,5 +12,25 @@ import { Child2Component } from './components/child2/child2.component';
   styleUrl:'./app.component.css'
 })
 export class AppComponent {
-  
+  movieForm: FormGroup;
+  name: FormControl;
+  duration: FormControl;
+  director: FormControl
+
+  constructor(){
+    this.name = new FormControl('');
+    this.duration = new FormControl('');
+    this.director = new FormControl('');
+
+    this.movieForm = new FormGroup({
+      name: this.name,
+      duration : this.duration,
+      director : this.director
+    })
+  }
+  handleSubmit():void{
+    console.log(this.movieForm);
+  }
+
+
 }
