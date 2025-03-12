@@ -23,4 +23,5 @@ export class MovieDetailsComponent implements OnInit{
     console.log(movieName);
      this.selectedMovie =  this.movieServise.getMovie(movieName);
   }
+  
 }
