@@ -5,6 +5,7 @@ import { FormPageComponent } from './pages/form-page/form-page.component';
 import { MovieDetailsComponent } from './pages/movie-details/movie-details.component';
 import { UserListComponent } from './pages/user-list/user-list.component';
 import { UserDetailsComponent } from './pages/user-details/user-details.component';
+import { UserFormComponent } from './pages/user-form/user-form.component';
 
 
 export const routes: Routes = [
@@ -14,4 +15,5 @@ export const routes: Routes = [
   {path: 'movies/:movieName',component:MovieDetailsComponent},
   {path: 'users',component:UserListComponent},
   {path: 'users/:userName',component:UserDetailsComponent},
+  {path: 'userCreate', component:UserFormComponent}
 ];
