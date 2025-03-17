@@ -11,10 +11,10 @@ export class UserService {
     this.users = [];
    }
 
-   getUser(){
+   getUsers(){
     return this.http.get<any[]>(this.API_URL);
    }
-   getUserid(id:number){
+   getUser(id:number){
     return this.http.get<any>(`${this.API_URL}/${id}`);
    }
 }

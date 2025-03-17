@@ -10,17 +10,18 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './user-details.component.scss'
 })
 export class UserDetailsComponent implements OnInit{
-  selectUser? :any;
+  selectUser :any;
   constructor(
+    private route:ActivatedRoute,
     public userService:UserService,
-    private route:ActivatedRoute
   ){}
   ngOnInit(): void {
-      const id = this.route.snapshot.params['id'];
+      const id = this.route.snapshot.params['userName'];
+      console.log(this.route.snapshot.params)
       this.getUser(id);
   }
   getUser(id:number){
-    this.userService.getUserid(id).subscribe({
+    this.userService.getUser(id).subscribe({
       next: (data) => {
         this.selectUser = data;
       },
