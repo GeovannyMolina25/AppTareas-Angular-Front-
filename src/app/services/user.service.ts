@@ -6,7 +6,7 @@ import User from '../models/User';
   providedIn: 'root'
 })
 export class UserService {
-  readonly API_URL = "https://jsonplaceholder.typicode.com/users"
+  readonly API_URL = "https://jsonplaceholder.typicode.com/posts"
   users: User[];
   constructor(private http: HttpClient) {
     this.users = [];
