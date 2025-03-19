@@ -3,13 +3,14 @@
 <p>Usuarios</p>
 <ul>
     @for (user of userService.users; track $index) {
-        <li class="user-link">
-            <a [routerLink]="user.id">
+        <li class="user-list">
+            <a [routerLink]="user.id.toString()" >
                 <div class="user-container">
                     <h4>{{$index + 1}}- {{user.name}}</h4>
-                    
                 </div>
             </a>
+            <h3 class="user.email"> {{user.email}}</h3>
+            <p class="trash-icon" (click)="deleteUser(user.id)">Borrar</p>
         </li>
     }
 </ul>
